@@ -125,7 +125,7 @@ export default function Preview() {
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 60 }}>
   <div>
     <h1 style={{ fontSize: 40, fontWeight: 700, marginBottom: 10 }}>Invoice</h1>
-    <p style={{ fontSize: 14, color: '#555' }}>No. {formData.doc_number || 'XXXX'} &nbsp; / &nbsp; {today.toLocaleDateString('ko-KR')}</p>
+    <p style={{ fontSize: 14, color: '#555' }}>No. HY25{formData.doc_number || 'XXXX'} &nbsp; / &nbsp; {today.toLocaleDateString('ko-KR')}</p>
   </div>
   <div style={{ width: 170, height: 'auto' }}>
     <img

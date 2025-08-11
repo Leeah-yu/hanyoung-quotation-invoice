@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.js": "/hanyoung-quotation-invoice/static/js/main.6303bd14.js",
+    "static/js/226.b1995c5f.chunk.js": "/hanyoung-quotation-invoice/static/js/226.b1995c5f.chunk.js",
+    "static/js/848.a6fb5f7c.chunk.js": "/hanyoung-quotation-invoice/static/js/848.a6fb5f7c.chunk.js",
+    "static/js/184.a92ba63b.chunk.js": "/hanyoung-quotation-invoice/static/js/184.a92ba63b.chunk.js",
+    "static/js/14.4f553510.chunk.js": "/hanyoung-quotation-invoice/static/js/14.4f553510.chunk.js",
+    "static/js/49.67a000ca.chunk.js": "/hanyoung-quotation-invoice/static/js/49.67a000ca.chunk.js",
+    "static/js/110.0da897f6.chunk.js": "/hanyoung-quotation-invoice/static/js/110.0da897f6.chunk.js",
+    "static/js/644.6b13ad0b.chunk.js": "/hanyoung-quotation-invoice/static/js/644.6b13ad0b.chunk.js",
+    "static/js/977.a5cdf417.chunk.js": "/hanyoung-quotation-invoice/static/js/977.a5cdf417.chunk.js",
+    "static/js/732.e824d291.chunk.js": "/hanyoung-quotation-invoice/static/js/732.e824d291.chunk.js",
+    "static/js/762.086a242d.chunk.js": "/hanyoung-quotation-invoice/static/js/762.086a242d.chunk.js",
+    "index.html": "/hanyoung-quotation-invoice/index.html",
+    "main.6303bd14.js.map": "/hanyoung-quotation-invoice/static/js/main.6303bd14.js.map",
+    "226.b1995c5f.chunk.js.map": "/hanyoung-quotation-invoice/static/js/226.b1995c5f.chunk.js.map",
+    "848.a6fb5f7c.chunk.js.map": "/hanyoung-quotation-invoice/static/js/848.a6fb5f7c.chunk.js.map",
+    "184.a92ba63b.chunk.js.map": "/hanyoung-quotation-invoice/static/js/184.a92ba63b.chunk.js.map",
+    "14.4f553510.chunk.js.map": "/hanyoung-quotation-invoice/static/js/14.4f553510.chunk.js.map",
+    "49.67a000ca.chunk.js.map": "/hanyoung-quotation-invoice/static/js/49.67a000ca.chunk.js.map",
+    "110.0da897f6.chunk.js.map": "/hanyoung-quotation-invoice/static/js/110.0da897f6.chunk.js.map",
+    "644.6b13ad0b.chunk.js.map": "/hanyoung-quotation-invoice/static/js/644.6b13ad0b.chunk.js.map",
+    "977.a5cdf417.chunk.js.map": "/hanyoung-quotation-invoice/static/js/977.a5cdf417.chunk.js.map",
+    "732.e824d291.chunk.js.map": "/hanyoung-quotation-invoice/static/js/732.e824d291.chunk.js.map",
+    "762.086a242d.chunk.js.map": "/hanyoung-quotation-invoice/static/js/762.086a242d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.6303bd14.js"
+  ]
+}

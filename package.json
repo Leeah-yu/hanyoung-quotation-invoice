@@ -1,6 +1,6 @@
 {
   "name": "quotation_ver2",
-  "homepage": "https://Leeah-yu.github.io/cv-react-quotation",
+  "homepage": "https://Leeah-yu.github.io/hanyoung-quotation-invoice",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -21,7 +21,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
+    "predeploy": "npm run build && copy build\\index.html build\\404.html",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {

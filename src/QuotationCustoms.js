@@ -1,9 +1,12 @@
+// src/QuotationCustoms.js
 import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
+import HY_BRANCHES from "./hyBranches"; // 추가
 
 export default function QuotationCustoms() {
   const navigate = useNavigate();
   const [form, setForm] = useState({
+    branchKey: "IC", // 지사 기본값
     company: "",
     doc_number: "",
     feeRate: "0.2",
@@ -83,7 +86,14 @@ export default function QuotationCustoms() {
       value: form[item],
       note: form.notes[item],
     }));
-    navigate("/customspreview", { state: { selectedData, company: form.company, doc_number: form.doc_number } });
+    navigate("/customspreview", {
+      state: {
+        selectedData,
+        branchKey: form.branchKey,
+        company: form.company,
+        doc_number: form.doc_number,
+      },
+    });
   };
 
   const renderTable = (title, items) => (
@@ -134,7 +144,18 @@ export default function QuotationCustoms() {
   );
 
   return (
-    <form onSubmit={handleSubmit} style={{ maxWidth: 900, margin: "0 auto", padding: 30, fontFamily: "'Pretendard', sans-serif", backgroundColor: "#f9f9f9", borderRadius: 8 }}>
+    <form
+      onSubmit={handleSubmit}
+      style={{
+        maxWidth: 900,
+        margin: "0 auto",
+        padding: 30,
+        fontFamily: "'Pretendard', sans-serif",
+        backgroundColor: "#f9f9f9",
+        borderRadius: 8,
+      }}
+    >
+      {/* 로고 + 타이틀 */}
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 30 }}>
         <div style={{ width: 180 }}>
           <img
@@ -146,6 +167,26 @@ export default function QuotationCustoms() {
         <h2 style={{ fontSize: 26, fontWeight: 700, color: "#1a2e59" }}>통관 수수료 견적서</h2>
       </div>
 
+      {/* 지사 선택 라디오 */}
+      <div style={{ maxWidth: 900, margin: "0 auto 20px", padding: "12px 0" }}>
+        <div style={{ fontWeight: 600, color: "#1a2e59", marginBottom: 8 }}>본지사 선택</div>
+        <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
+          {Object.values(HY_BRANCHES).map((b) => (
+            <label key={b.key} style={{ display: "flex", alignItems: "center", gap: 6 }}>
+              <input
+                type="radio"
+                name="branchKey"
+                value={b.key}
+                checked={form.branchKey === b.key}
+                onChange={handleChange}
+              />
+              {b.label}
+            </label>
+          ))}
+        </div>
+      </div>
+
+      {/* 업체명 & 문서번호 */}
       <div style={{ display: "flex", flexWrap: "wrap", gap: 20, marginBottom: 40 }}>
         <div style={{ flex: 1, minWidth: 200 }}>
           <label style={{ display: "block", fontWeight: 600, marginBottom: 6 }}>업체명</label>
@@ -190,47 +231,39 @@ export default function QuotationCustoms() {
         { key: "exportFtaCertificateAuthorized", label: "FTA C/O 발급 (인증수출자)", suffix: "원" },
         { key: "exportFtaCertificateUnauth", label: "FTA C/O 발급 (비인증수출자)", suffix: "원" },
       ])}
-<div
-  style={{
-    display: "flex",
-    justifyContent: "center",
-    gap: 20, // 버튼 사이 간격
-    marginTop: 30,
-  }}
->
-  <button
-    onClick={() => navigate("/")}
-    style={{
-      backgroundColor: "#aaa",
-      border: "none",
-      padding: "12px 30px", // 높이 맞추기 위해 수정
-      borderRadius: 6,
-      cursor: "pointer",
-      fontWeight: 600,
-      fontSize: 16, // 글자 크기 맞추기
-      color: "#fff",
-    }}
-  >
-    다시하기
-  </button>
 
-  <button
-    type="submit"
-    style={{
-      backgroundColor: "#3f72af",
-      color: "#fff",
-      border: "none",
-      borderRadius: 6,
-      padding: "12px 30px",
-      fontSize: 16,
-      fontWeight: 600,
-      cursor: "pointer",
-    }}
-  >
-    📄 견적서 생성
-  </button>
-</div>
-
+      <div style={{ display: "flex", justifyContent: "center", gap: 20, marginTop: 30 }}>
+        <button
+          onClick={() => navigate("/")}
+          style={{
+            backgroundColor: "#aaa",
+            border: "none",
+            padding: "12px 30px",
+            borderRadius: 6,
+            cursor: "pointer",
+            fontWeight: 600,
+            fontSize: 16,
+            color: "#fff",
+          }}
+        >
+          다시하기
+        </button>
+        <button
+          type="submit"
+          style={{
+            backgroundColor: "#3f72af",
+            color: "#fff",
+            border: "none",
+            borderRadius: 6,
+            padding: "12px 30px",
+            fontSize: 16,
+            fontWeight: 600,
+            cursor: "pointer",
+          }}
+        >
+          📄 견적서 생성
+        </button>
+      </div>
     </form>
   );
 }

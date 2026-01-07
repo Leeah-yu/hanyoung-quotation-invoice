@@ -9,7 +9,7 @@ export const HY_BRANCHES = {
     fax: "02-741-0008",
     bank: "신한은행",
     account: "100-021-961562",
-    holder: "관세법인한영",
+    holder: "관세법인 한영",
   },
   GN: {
     key: "GN",
@@ -20,7 +20,7 @@ export const HY_BRANCHES = {
     fax: "02-549-8093",
     bank: "--은행",
     account: "---",
-    holder: "관세법인한영",
+    holder: "관세법인 한영",
   },
   BS: {
     key: "BS",
@@ -29,9 +29,9 @@ export const HY_BRANCHES = {
     address: "부산광역시 부산진구 가야대로 749-1, 1701호",
     tel: "051-462-6167",
     fax: "051-465-6168",
-    bank: "--은행",
-    account: "---",
-    holder: "관세법인한영 부산지점",
+    bank: "국민은행",
+    account: "947801-01-257824",
+    holder: "관세법인 한영 부산지점",
   },
   JA: {
     key: "JA",
@@ -40,9 +40,9 @@ export const HY_BRANCHES = {
     address: "부산 중구 광복로97번길 18, 807호",
     tel: "051-414-0811",
     fax: "051-414-0812",
-    bank: "--은행",
-    account: "---",
-    holder: "관세법인한영 중앙지점",
+    bank: "국민은행",
+    account: "551101-01-494813",
+    holder: "관세법인 한영 중앙",
   },
   IC: {
     key: "IC",
@@ -63,3 +63,6 @@ export function formatDocNo(prefix, docNumber) {
   const num = (docNumber ?? "").toString().trim();
   return `${prefix}-${num || "XXXX"}`;
 }
+
+
+export default HY_BRANCHES;

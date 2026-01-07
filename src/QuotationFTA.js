@@ -161,7 +161,7 @@ useEffect(() => {
             value={form.company}
             onChange={handleChange}
             placeholder="업체명을 입력하세요"
-            style={{ width: "100%", padding: 10, borderRadius: 6, border: "1.5px solid #ccc" }}
+            style={{ width: "90%", padding: 10, borderRadius: 6, border: "1.5px solid #ccc" }}
             required
           />
         </div>
@@ -173,7 +173,7 @@ useEffect(() => {
             value={form.doc_number}
             onChange={handleChange}
             placeholder="문서번호 입력"
-            style={{ width: "100%", padding: 10, borderRadius: 6, border: "1.5px solid #ccc" }}
+            style={{ width: "90%", padding: 10, borderRadius: 6, border: "1.5px solid #ccc" }}
             required
           />
         </div>

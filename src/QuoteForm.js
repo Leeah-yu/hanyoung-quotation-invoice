@@ -9,7 +9,7 @@ export default function QuoteForm() {
 
   const [state, setState] = useState({
 
-    docType: "invoice", // invoice | quotation
+    docType: "invoice", //invoice | quotation
     // 지사 선택 (기본: 인천)
     branchKey: "IC",
 
@@ -485,7 +485,7 @@ export default function QuoteForm() {
             id="doc_number"
             name="doc_number"
             required
-            placeholder="숫자 3자리 입력"
+            placeholder="문서번호를 구성할 숫자를 입력해주세요"
             value={state.doc_number}
             onChange={handleChange}
             style={{

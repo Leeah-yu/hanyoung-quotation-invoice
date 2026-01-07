@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import HY_BRANCHES from "./hyBranches"; // ← 지사 목록 가져오기
+
 
 export default function QuotationConsulting() {
   const navigate = useNavigate();
@@ -11,9 +13,10 @@ export default function QuotationConsulting() {
     doc_number: "",
     discountRate: 0,
       type: "quotation", // 기본값
-
-    items: [{ id: 1, label: "", qty: "", unit: "", amount: 0, note: "" }],
-  });
+  branchKey: "IC",     // ✅ 기본값(없으면 라디오 체크 안 잡힘)
+  showTotals: true,    // ✅ 최종 견적서(Preview/PDF)에 총액 표시 여부
+  items: [{ id: 1, label: "", qty: "", unit: "", amount: 0, note: "" }],
+});
 
   const handleChange = (e, id, field) => {
     const value = e.target.value;
@@ -74,6 +77,9 @@ export default function QuotationConsulting() {
         totalCost,
         note: form.note || "",
             type: form.type, // <-- 추가
+            branchKey: form.branchKey,
+            showTotals: form.showTotals, // ✅ 추가
+
 
       },
     });
@@ -136,6 +142,38 @@ export default function QuotationConsulting() {
       style={{ marginRight: 6 }}
     />
     Quotation
+  </label>
+</div>
+
+      {/* 지사 선택 */}
+      <div style={{ marginBottom: 20 }}>
+        <label style={{ fontWeight: 600, display: "block", marginBottom: 8 }}>지사 선택:</label>
+        {Object.values(HY_BRANCHES).map((branch) => (
+          <label key={branch.key} style={{ marginRight: 20 }}>
+            <input
+              type="radio"
+              name="branchKey"
+              value={branch.key}
+              checked={form.branchKey === branch.key}
+              onChange={handleBasicChange}
+              style={{ marginRight: 6 }}
+            />
+            {branch.label}
+          </label>
+        ))}
+      </div>
+
+
+{/* 최종 견적서 총액 표시 */}
+<div style={{ marginBottom: 20 }}>
+  <label style={{ display: "flex", alignItems: "center", gap: 8, fontWeight: 600 }}>
+    <input
+      type="checkbox"
+      name="showTotals"
+      checked={!!form.showTotals}
+      onChange={(e) => setForm((prev) => ({ ...prev, showTotals: e.target.checked }))}
+    />
+    최종 견적서에 총액(Discount/VAT/Total) 표시
   </label>
 </div>
 

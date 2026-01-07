@@ -32,13 +32,13 @@ export default function Preview() {
       : "업체명없음";
     const filename = `[관세법인한영] ${companyNameSafe} ${fileLabel}_${dateString}.pdf`;
 
-    html2canvas(input, { scale: 2 }).then((canvas) => {
+    html2canvas(input, { scale: 1.2 }).then((canvas) => {
       const imgData = canvas.toDataURL("image/png");
       const pdfWidth = doc.internal.pageSize.getWidth() - 40;
       const imgProps = doc.getImageProperties(imgData);
       const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
 
-      doc.addImage(imgData, "PNG", 20, 20, pdfWidth, pdfHeight);
+      doc.addImage(imgData, "JPEG", 20, 20, pdfWidth, pdfHeight);
       doc.save(filename);
     });
   };

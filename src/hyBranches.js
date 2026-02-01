@@ -18,8 +18,8 @@ export const HY_BRANCHES = {
     address: "서울 강남구 언주로 141길 6, 406호",
     tel: "02-549-8095",
     fax: "02-549-8093",
-    bank: "--은행",
-    account: "---",
+    bank: "국민은행",
+    account: "096301-04-094728",
     holder: "관세법인 한영",
   },
   BS: {
